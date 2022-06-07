@@ -31,7 +31,7 @@ namespace LojaVictor2.Controllers
             DaoProduto dao = new DaoProduto();
             dao.Inserir(produto);
 
-            return View();
+            return View(produto);
         }
 
     }

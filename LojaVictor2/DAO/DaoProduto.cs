@@ -39,7 +39,7 @@ namespace LojaVictor2.DAO
                     produto.Nome = (string)rad["Nome"];
                     produto.CategoriaId = (Convert.ToInt32(rad["CategoriaId"]));
 
-                    produto.Preco = (Convert.ToDouble(rad["Valor"]));
+                    produto.Preco = (Convert.ToDouble(rad["Preco"]));
                     produtos.Add(produto);
                 }
 
@@ -68,7 +68,8 @@ namespace LojaVictor2.DAO
                 SqlCommand cmd = new SqlCommand("uspProdutoInserir", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nome", produto.Nome);
-                cmd.Parameters.AddWithValue("Preco", produto.Preco);
+                cmd.Parameters.AddWithValue("@Preco", Convert.ToDouble(produto.Preco));
+                cmd.Parameters.AddWithValue("@CategoriaId", produto.CategoriaId);
 
                 id = Convert.ToInt32(cmd.ExecuteScalar());
             }
