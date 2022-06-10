@@ -37,9 +37,8 @@ namespace LojaVictor2.DAO
 
                     produto.Id = Convert.ToInt32(rad["Id"]);
                     produto.Nome = (string)rad["Nome"];
-                    produto.CategoriaId = (Convert.ToInt32(rad["CategoriaId"]));
-
-                    produto.Preco = (Convert.ToDouble(rad["Preco"]));
+                    produto.Preco = Convert.ToDouble(rad["Preco"]);
+                    produto.CategoriaId = Convert.ToInt32(rad["CategoriaId"]);
                     produtos.Add(produto);
                 }
 
@@ -69,7 +68,7 @@ namespace LojaVictor2.DAO
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nome", produto.Nome);
                 cmd.Parameters.AddWithValue("@Preco", Convert.ToDouble(produto.Preco));
-                cmd.Parameters.AddWithValue("@CategoriaId", produto.CategoriaId);
+                cmd.Parameters.AddWithValue("@CategoriaId", Convert.ToInt32(produto.CategoriaId));
 
                 id = Convert.ToInt32(cmd.ExecuteScalar());
             }

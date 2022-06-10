@@ -20,18 +20,22 @@ namespace LojaVictor2.Controllers
             return View(produtos);
         }
 
+        //formulário para inserir 
+     
         public ActionResult Form()
         {
             return View();
         }
 
+        //adiciona produtos no banco
+       [HttpPost]
         public ActionResult Adiciona(Produto produto)
         {
 
             DaoProduto dao = new DaoProduto();
             dao.Inserir(produto);
 
-            return View(produto);
+            return RedirectToAction("Index", "Produto");
         }
 
     }
