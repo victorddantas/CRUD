@@ -13,8 +13,8 @@ namespace LojaVictor2.BL
         //listar
         public List<Produto> Listar()
         {
-            DaoProduto daoProduto = new DaoProduto();
-            var produtos = daoProduto.Listar();
+            ProdutoDao ProdutoDao = new ProdutoDao();
+            var produtos = ProdutoDao.Listar();
 
             return produtos;
         }
@@ -22,7 +22,7 @@ namespace LojaVictor2.BL
         //inserir
         public int Inserir(Produto produto)
         {
-            DaoProduto daoProduto = new DaoProduto();
+            ProdutoDao daoProduto = new ProdutoDao();
             int id = daoProduto.Inserir(produto);
             return id;            
         }

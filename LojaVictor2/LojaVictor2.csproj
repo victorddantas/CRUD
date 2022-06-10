@@ -120,13 +120,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BL\BlCategoriaProdutos.cs" />
     <Compile Include="BL\BlProduto.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
-    <Compile Include="DAO\DaoProduto.cs" />
+    <Compile Include="DAO\CategoriaProdutosDao.cs" />
+    <Compile Include="DAO\ProdutoDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoriaProdutos.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

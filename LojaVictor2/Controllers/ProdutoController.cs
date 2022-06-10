@@ -24,7 +24,10 @@ namespace LojaVictor2.Controllers
      
         public ActionResult Form()
         {
-            return View();
+            BlCategoriaProdutos blCategoriaProdutos = new BlCategoriaProdutos();
+            var categoriaProdutos = blCategoriaProdutos.Listar(); 
+
+            return View(categoriaProdutos);
         }
 
         //adiciona produtos no banco
@@ -32,7 +35,7 @@ namespace LojaVictor2.Controllers
         public ActionResult Adiciona(Produto produto)
         {
 
-            DaoProduto dao = new DaoProduto();
+            ProdutoDao dao = new ProdutoDao();
             dao.Inserir(produto);
 
             return RedirectToAction("Index", "Produto");

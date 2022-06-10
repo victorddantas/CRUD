@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 namespace LojaVictor2.DAO
 {
-    public class DaoProduto
+    public class ProdutoDao
     {
         //Método listar
         public List<Produto> Listar()
@@ -57,7 +57,7 @@ namespace LojaVictor2.DAO
         {
             int id;
             SqlConnection con = null;
-            
+
             try
             {
                 string strConexao = ConfigurationManager.ConnectionStrings["LojaVictor2"].ConnectionString;
@@ -75,7 +75,7 @@ namespace LojaVictor2.DAO
             finally
             {
                 if (con != null)
-                con.Close();
+                    con.Close();
             }
             return id;
 

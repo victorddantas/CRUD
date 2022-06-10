@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<LojaVictor2.Models.CategoriaProdutos>
 @{
     Layout = null;
 }
@@ -11,7 +11,7 @@
     <title>Form</title>
 </head>
 <body>
-    <div> 
+    <div>
         <form action="/Produto/Adiciona/" method="post">
             <label for="nome">Nome:</label>
             <input id="nome" name="produto.Nome" />
@@ -20,8 +20,13 @@
             <input id="preco" name="produto.Preco" />
 
             <label for="categoria">Categoria:</label>
-            <input id="categoria" name="produto.CategoriaId" />
+            <select id="categoria" name="produto.CategoriaId">
+                @foreach (var categoria in Model )
+                {
+                    <option value="@categoria.CategoriaId">@categoria.Nome</option>
+                }
 
+            </select>
             <input type="submit" value="Cadastrar" />
         </form>
     </div>
